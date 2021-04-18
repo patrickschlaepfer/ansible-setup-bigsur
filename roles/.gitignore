@@ -1,0 +1,11 @@
+# Ignore
+/*
+# Except:
+# the .gitignore file
+!.gitignore
+# the requirement file
+!requirements.yml
+# Readmei if you have on
+!README.md
+# and any specific role we eant to version locally
+!locall-versonied-roles*/

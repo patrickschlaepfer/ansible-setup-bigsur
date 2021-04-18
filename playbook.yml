@@ -1,0 +1,35 @@
+---
+- name: Setup up Mac
+  hosts: localhost
+
+  vars:
+    ansible_python_interpreter: /Users/patrick/venvs/ansible2.10/bin/python3
+
+    homebrew_taps:
+      - homebrew/core
+      - homebrew/cask
+
+    homebrew_cask_apps:
+      - vscodium
+
+    homebrew_installed_packages:
+      - git
+
+    homebrew_user: patrick
+
+  roles:
+    - elliotweiser.osx-command-line-tools
+    - geerlingguy.homebrew
+
+  tasks:
+    - name: Setting GIT Email
+      community.general.git_config:
+        name: user.email
+        value: "patrick@schlaepfer.com"
+        scope: global
+
+    - name: Setting GIT Username
+      community.general.git_config:
+        name: user.name
+        value: "Patrick Schlaepfer"
+        scope: global
